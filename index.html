@@ -18,14 +18,42 @@
 
 <body>
     <header class="page-header">
-        <img class="logo" src="/assets/html_css_js.png">
-        <p class="title">Supabase Web App</p>
+        <img class="logo" src="/assets/chilislogo.jpg">
+        <p class="title">Chili's Restaurant Rater </p>
         <nav>
             <a id="sign-out-link" href="auth">Sign Out</a>
         </nav>
     </header>
 
     <main>
+        <form id="chilis-form">
+
+            <label>
+
+                <h4>Chilis Location</h4>
+                <input id="chilis-name" required name="chilis-name" placeholder="Name of Chili's">
+
+            </label>
+
+            <label>
+
+                <h5>Upload Chili's Location</h5>
+                 <!--the name will have to correspond with supabase table??? -->
+                <input type="file" name="chilis_url" >
+
+            </label>
+
+            <div>
+                <img id="chilis-img" alt="chilis location">
+            </div>
+
+            <label>
+                <h3>Rate your Chili's experience?</h3>
+                <textarea name="chilis-rating" id="chilis-rating" cols="30" rows="10"></textarea>
+            </label>
+            <div></div>
+            <button id="add-chilis-comment"> add comment </button>
+        </form>
 
     </main>
 
