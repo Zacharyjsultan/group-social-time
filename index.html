@@ -39,10 +39,11 @@
 
                 <h5>Upload Chili's Location</h5>
                  <!--the name will have to correspond with supabase table??? -->
-                <input type="file" name="chilis_url" >
+                <input type="file" name="chilis_url" id="chilis-file-upload">
 
             </label>
- ;
+
+
             <div>
                 <img id="chilis-img" alt="chilis location">
                 <h6>Address: 207 W Spokane Falls Blvd, Spokane, WA 99201</h6>
@@ -51,6 +52,16 @@
             <label>
                 <h3>Rate your Chili's experience??</h3>
                 <textarea name="chilis-rating" id="chilis-rating" cols="30" rows="10"></textarea>
+
+
+            <div id="image-container">
+                <img id="chilis-image" alt="chilis location">
+            </div>
+
+            <label>
+                <h3>Rate your Chili's experience?</h3>
+                <textarea name="chilis-rating" id="chilis-rating-textarea" cols="30" rows="5"></textarea>
+
             </label>
             <div></div>
             <button id="add-chilis-comment"> add comment </button>

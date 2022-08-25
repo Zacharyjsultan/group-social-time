@@ -1,5 +1,5 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://fjidvhxajekcfrrjsnla.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZqaWR2aHhhamVrY2ZycmpzbmxhIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjAxNDU2ODYsImV4cCI6MTk3NTcyMTY4Nn0._zi_gZoOt0ksKYa3J9htU9w6oH8ojf_WkKrLHWGaswo';
 
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -42,4 +42,23 @@ export async function signOutUser() {
     return await client.auth.signOut();
 }
 
+function checkError({ data, error }) {
+    // eslint-disable-next-line
+    return error ? console.error(error) : data;
+}
+
 /* Data functions */
+
+export async function uploadPhoto() {
+    const uploadItem = event.target.files[0];
+    const response = await client.storage
+        .from('photos')
+        .upload(`public/enterphotonamestringtemplate.png`, uploadItem);
+
+    return checkError(response);
+}
+
+// const avatarFile = event.target.files[0]
+// const { data, error } = await supabase.storage
+//   .from('avatars')
+//   .upload('public/avatar1.png', avatarFile)
